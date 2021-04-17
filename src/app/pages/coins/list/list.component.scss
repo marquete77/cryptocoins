@@ -1,0 +1,96 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+
+.container {
+
+
+  .coins_premium {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $tertiary-color;
+
+    .card {
+      cursor: pointer;
+      padding: 1.5rem;
+      width: 35%;
+      height: 180px;
+      @include card;
+      background-color: $white;
+      .header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .content {
+        display: flex;
+        justify-content: space-between;
+        .price {
+
+        }
+        .logo-coin {
+
+        }
+        .description {
+          max-width: 350px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .container_list {
+    margin: 0 auto;
+    padding: 1.5rem;
+    max-width: 1200px;
+    height: 550px;
+
+    .list_coins {
+      padding-top: 1rem;
+      margin: 0 auto;
+      max-width: 1440px;
+      height: 530px;
+      overflow: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 220px));
+      grid-gap: 1.5rem;
+      justify-content: center;
+
+      .card {
+        cursor: pointer;
+        height: 75px;
+        border: 1px solid $border;
+        border-radius: 10px;
+        background-color: $white;
+        padding: 1rem;
+        @include transition(.2s);
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        .name {
+          display: flex;
+          flex-direction: column;
+          .id-coin {
+            font-size: 12px;
+          }
+        }
+
+        &:hover {
+          @include transition(.2s);
+          transform: scale(1.2);
+          background-color: $primary-color;
+          color: $white;
+        }
+      }
+    }
+  }
+
+}
+

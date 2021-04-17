@@ -1,0 +1,17 @@
+<div class="card_coin">
+  <div class="header">
+    <h3>{{coin?.name}}</h3>
+  </div>
+  <div class="content">
+    <div *ngIf="coin.price_change_percentage_24h >= 0">
+      <i  class="pi pi-angle-double-up avg-icon-green" ></i>
+    </div>
+    <div *ngIf="coin.price_change_percentage_24h < 0">
+      <i  class="pi pi-angle-double-down avg-icon-red" ></i>
+    </div>
+    <span>{{coin?.current_price | currency}}</span>
+  </div>
+  <div class="footer">
+    <button pButton label="Ver lista" (click)="handleCoinList(coin.id)"></button>
+  </div>
+</div>

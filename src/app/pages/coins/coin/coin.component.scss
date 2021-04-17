@@ -1,0 +1,76 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.container_coin {
+  width: 100%;
+  height: calc(100vh - 74px);
+
+  .content_coin {
+
+    .card {
+      margin: 2.5rem auto;
+      @include card;
+      background-color: $white;
+      height: auto;
+      width: 95%;
+      padding: 1.5rem;
+
+      .title {
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid $border;
+        justify-content: space-between;
+
+        #image_coin {
+          width: auto;
+        }
+
+        .name {
+          h1 {
+            margin: 0;
+          }
+          span {
+            margin-top: -20px;
+          }
+        }
+
+      }
+
+      .data {
+        .avg {
+          width: 100%;
+          font-size: 18px;
+
+          .rank {
+            justify-content: flex-end;
+            display: flex;
+            flex-wrap: wrap;
+
+            > div {
+              margin: 10px 0
+            }
+          }
+
+
+        }
+        .description {
+          text-align: justify;
+        }
+
+        .links {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer {
+          margin-top: 1rem;
+          border-top: 2px solid $border;
+          padding-top: 1rem;
+        }
+      }
+
+    }
+  }
+
+}

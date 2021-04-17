@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="coins_premium">
+    <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+    <div (click)="handleDetails(coin.id)" class="card" *ngFor="let coin of coinsHigh">
+      <div class="header">
+        <h3>{{coin.name}}</h3>
+        <div>
+          <span>Rank: </span><span><strong>{{coin.market_cap_rank}}</strong></span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="price">
+          <span>Precio: </span><span><strong>{{coin.market_data.current_price.usd | currency}}</strong></span>
+        </div>
+        <div>
+          <img class="logo-coin" src="{{coin.image.large}}" height="80" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container_list">
+    <div class="list_coins">
+      <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+      <div class="card" (click)="handleDetails(coin.id)" *ngFor="let coin of coins">
+        <div class="name">
+          <span>{{coin.name}}</span>
+          <span class="id-coin">{{coin.id}}</span>
+        </div>
+        <div class="image">
+          <img src="{{coin.image}}" height="35" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <p-paginator (onPageChange)="paginate($event)"
+               [rows]="20" [totalRecords]="1000"
+               [rowsPerPageOptions]="[20,50,100]">
+  </p-paginator>
+</div>

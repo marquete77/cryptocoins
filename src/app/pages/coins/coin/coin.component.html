@@ -1,0 +1,79 @@
+<div id="container_coin" class="container_coin">
+
+  <div class="goBack">
+    <i class="pi pi-angle-left go" style="font-size: 2rem" (click)="back()"></i>
+  </div>
+  <div class="content_coin">
+    <div class="card">
+      <div class="title">
+        <div class="name">
+          <h1>{{coin?.name}}</h1>
+          <span>{{coin?.id}}</span>
+        </div>
+        <div id="image_coin">
+          <img src="{{coin?.image.large}}" height="150" alt="">
+        </div>
+      </div>
+      <div class="data">
+        <div class="avg">
+          <div class="price">
+            <span>Precio: </span>
+            <span><strong>{{coin?.market_data.current_price.usd | currency}}</strong></span>
+          </div>
+          <div class="rank">
+            <div>
+              <span>Rank: </span>
+              <span><strong>{{coin?.coingecko_rank}}</strong></span>
+            </div>
+            <div>
+              <span style="margin-left: 10px; margin-right: 10px"> / </span>
+            </div>
+            <div>
+              <span>Score: </span>
+              <span><strong>{{coin?.coingecko_score}}</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="description-coin" class="description">
+        </div>
+
+        <div class="links">
+          <div>
+            <h4>Home page</h4>
+            <div class="blockchain" *ngFor="let link of coin?.links.homepage">
+              <a *ngIf="link.trim().length > 0" href="{{link}}">{{link}}</a>
+            </div>
+          </div>
+          <div>
+            <h4>Blockchain</h4>
+            <div class="blockchain" *ngFor="let link of coin?.links.blockchain_site">
+              <a *ngIf="link.trim().length > 0" href="{{link}}">{{link}}</a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Foro oficial</h4>
+            <div class="blockchain" *ngFor="let link of coin?.links.official_forum_url">
+              <a *ngIf="link.trim().length > 0" href="{{link}}">{{link}}</a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Github</h4>
+            <div class="blockchain" *ngFor="let link of coin?.links.repos_url.github">
+              <a *ngIf="link.trim().length > 0" href="{{link}}">{{link}}</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="footer">
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

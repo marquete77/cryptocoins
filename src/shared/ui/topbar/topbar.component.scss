@@ -1,0 +1,32 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.layout__topbar {
+  height: 74px;
+  width: 100%;
+  background-color: $white;
+
+  .container__topbar {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p-toolbar {
+      width: 100%;
+      .p-toolbar {
+        background-color: $white;
+        border: none;
+      }
+
+    }
+  }
+}
+
+.links-topbar {
+  text-decoration: none;
+  color: $black-secondary;
+  font-weight: 500;
+}

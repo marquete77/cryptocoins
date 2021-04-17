@@ -1,0 +1,32 @@
+<div id="" class="main__home">
+  <app-topbar></app-topbar>
+  <div class="banner">
+    <div class="title">
+      <span>Criptomonedas.</span>
+    </div>
+    <div class="subtitle">
+      <span>Todo lo que necesitas conocer para hacer tus inversiones</span>
+    </div>
+  </div>
+
+  <div id="cards-coins" class="coins">
+    <div *ngFor="let coin of coins">
+      <app-crypto-home-card [coin]="coin"></app-crypto-home-card>
+    </div>
+  </div>
+
+  <div id="faq" class="faq">
+    <p-fieldset class="fieldset-faq" legend="¿Qué son las criptomonedas?" [collapsed]="true" [toggleable]="true">
+      Imagina que, en vez de utilizar monedas y billetes, el dinero estuviera representado en piedras gigantes ancladas al piso. En lugar de mover las piedras, sólo se transfiere su propiedad y todos saben de quién son cuáles piedras. Esto hace difícil que se cometa fraude, ya que no podrías gastar las piedras de otros, no podrías usar la misma piedra dos veces, y tampoco podrías tallar una nueva piedra.
+    </p-fieldset>
+
+    <p-fieldset class="fieldset-faq" legend="¿Cuál es la innovación detrás de las criptomonedas?" [collapsed]="true" [toggleable]="true">
+      Esta nueva generación de criptomonedas resuelve el antiguo “problema del doble gasto”, que se refiere a que las monedas digitales podían ser generadas o gastadas más de una vez, dada su naturaleza digital. En el caso de Bitcoin, se resolvió la problemática utilizando la tecnología blockchain -para conservar el registro- y la criptografía -para verificar operaciones-.    </p-fieldset>
+
+    <p-fieldset class="fieldset-faq" legend="¿Qué determina su precio y como se compran?" [collapsed]="true" [toggleable]="true">
+      El precio de Bitcoin ([BTC-USD]) está determinado por la oferta y la demanda. Cada bitcoin tiene adherido en su código una “clave” o “llave privada” que puede ser compartida para tomar u otorgar la posesión del mismo.    </p-fieldset>
+  </div>
+
+
+
+</div>
